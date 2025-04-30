@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #d63384;
+      padding: 30px;
+    }
+
+    form {
+      background-color: #ffe4e1;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px #f8bbd0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff69b4;
+      margin-bottom: 25px;
+    }
+
+    fieldset {
+      border: 2px solid #ffb6c1;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 16px;
+      color: #ff1493;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ffc0cb;
+      border-radius: 8px;
+      background-color: #fffafa;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff69b4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h2>🎀 Customer Feedback Form 🎀</h2>
+
+    <!-- Service Rating -->
+    <fieldset>
+      <legend>Rate Our Service (1 to 10)</legend>
+      <input type="range" id="serviceRating" name="serviceRating" min="1" max="10" step="1">
+    </fieldset>
+
+    <!-- Recommendation -->
+    <fieldset>
+      <legend>Would you recommend us?</legend>
+      <label><input type="radio" name="recommend" value="yes" required> Yes</label>
+      <label><input type="radio" name="recommend" value="no"> No</label>
+      <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+    </fieldset>
+
+    <!-- Features Liked -->
+    <fieldset>
+      <legend>What did you like about our service?</legend>
+      <label><input type="checkbox" name="features" value="Support"> Support</label>
+      <label><input type="checkbox" name="features" value="Price"> Price</label>
+      <label><input type="checkbox" name="features" value="Quality"> Quality</label>
+      <label><input type="checkbox" name="features" value="Delivery"> Delivery</label>
+      <label><input type="checkbox" name="features" value="Other" id="otherCheckbox"> Other:</label>
+      <input type="text" name="otherText" placeholder="Please specify..." id="otherText">
+    </fieldset>
+
+    <!-- Usage Frequency -->
+    <fieldset>
+      <legend>How many times have you used our service?</legend>
+      <input type="number" name="usageFrequency" min="1" max="100" step="1" required>
+    </fieldset>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+
+  <script>
+    // Optional enhancement: Disable "Other" text unless the checkbox is selected
+    const otherCheckbox = document.getElementById('otherCheckbox');
+    const otherText = document.getElementById('otherText');
+    otherText.disabled = true;
+
+    otherCheckbox.addEventListener('change', () => {
+      otherText.disabled = !otherCheckbox.checked;
+    });
+  </script>
+
+</body>
+</html>

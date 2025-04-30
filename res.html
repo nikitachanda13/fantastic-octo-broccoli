@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎀 Pinky Registration Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+      padding: 30px;
+      color: #d63384;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff69b4;
+      font-size: 28px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #ffe4e1;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #f8bbd0;
+    }
+
+    fieldset {
+      border: 2px solid #ffb6c1;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #ff1493;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ffc0cb;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background-color: #fffafa;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus {
+      border-color: #ff69b4;
+      outline: none;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff69b4;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎀 User Registration Form 🎀</h2>
+
+  <form>
+    <input type="hidden" name="role" value="new_user">
+
+    <fieldset>
+      <legend>Personal Info</legend>
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required autofocus maxlength="50" title="Enter your full name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required title="Enter a valid email address">
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" maxlength="10" title="Enter a 10-digit mobile number">
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required min="1" max="120" title="Enter your age between 1 and 120">
+    </fieldset>
+
+    <fieldset>
+      <legend>Account Info</legend>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required maxlength="20" title="Username must be up to 20 characters">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required maxlength="20" title="Password should be secure">
+
+      <label for="confirmpassword">Confirm Password:</label>
+      <input type="password" id="confirmpassword" name="confirmpassword" required maxlength="20" title="Re-enter the same password">
+    </fieldset>
+
+    <div class="btn-group">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎀 My Cute To-Do List 🎀</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h2>🎀 My To-Do List 🎀</h2>
+
+  <div class="task-container">
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const taskText = taskInput.value.trim();
+
+      if (taskText === '') {
+        alert("Please enter a task.");
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.innerHTML = `🎀 ${taskText} <button class="delete-btn" onclick="this.parentElement.remove()">Delete</button>`;
+      document.getElementById('taskList').appendChild(li);
+
+      taskInput.value = '';
+      taskInput.focus();
+    }
+  </script>
+
+</body>
+</html>

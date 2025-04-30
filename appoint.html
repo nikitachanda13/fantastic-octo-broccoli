@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment & Scheduling Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      padding: 30px;
+      color: #d63384;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffe4e1;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #f8bbd0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff69b4;
+      margin-bottom: 25px;
+    }
+
+    fieldset {
+      border: 2px solid #ffb6c1;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 16px;
+      color: #ff1493;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ffc0cb;
+      background-color: #fffafa;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+  <form autocomplete="off">
+    <h2>🎀 Appointment & Scheduling Form 🎀</h2>
+
+    <fieldset>
+      <legend>Appointment Details</legend>
+
+      <!-- Booking Date -->
+      <label for="bookingDate">Booking Date:</label>
+      <input type="date" id="bookingDate" name="bookingDate" required min="2024-01-01" max="2030-12-31">
+
+      <!-- Appointment Time -->
+      <label for="appointmentTime">Appointment Time (09:00–17:00):</label>
+      <input type="time" id="appointmentTime" name="appointmentTime" required min="09:00" max="17:00" step="900">
+
+      <!-- Full Slot -->
+      <label for="fullSlot">Full Slot (Date & Time):</label>
+      <input type="datetime-local" id="fullSlot" name="fullSlot" required>
+
+      <!-- Preferred Review Month -->
+      <label for="reviewMonth">Preferred Review Month:</label>
+      <input type="month" id="reviewMonth" name="reviewMonth" required>
+
+      <!-- Planning Week -->
+      <label for="planningWeek">Planning Week:</label>
+      <input type="week" id="planningWeek" name="planningWeek" required>
+    </fieldset>
+
+    <input type="submit" value="Submit Appointment">
+  </form>
+
+</body>
+</html>
